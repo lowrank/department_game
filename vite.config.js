@@ -11,11 +11,9 @@ export default defineConfig({
     minify: true,
     cssCodeSplit: false,
     assetsInlineLimit: 100000000,
-    rollupOptions: {
-      output: {
-        manualChunks: () => 'everything.js'
-      }
-    }
+    inlineDynamicImports: true,
+    outDir: 'dist',
+    sourcemap: false,
   },
   resolve: {
     alias: {
