@@ -240,7 +240,7 @@ export default function DepartmentChairGame() {
   const restartGame = () => {
     setRound(1);
     setYear(1);
-    setStats({ budget: 20000, morale: 50, reputation: 50, research: 40 });
+    setStats({ budget: 30000, morale: 50, reputation: 50, research: 40 });
     setHistory([]);
     setGameOver(false);
     setSpecialEvent(null);
