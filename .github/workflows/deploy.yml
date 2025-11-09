@@ -1,12 +1,13 @@
 name: Deploy to GitHub Pages
 
+# Workflow for deploying the game to GitHub Pages
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write  # Needed for pushing to gh-pages branch
 
 jobs:
   build-and-deploy:
