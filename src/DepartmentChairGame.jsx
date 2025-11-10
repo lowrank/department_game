@@ -52,7 +52,7 @@ const scenarios = [
     { text: 'Resist', effects: { reputation: -5 } }
   ]},
   { question: 'Student satisfaction survey results are poor.', choices: [
-    { text: 'Host open forum (-$5000)', effects: { budget: -5000, morale: 5 } },
+    { text: 'Host open forum (-$2000)', effects: { budget: -2000, morale: 5 } },
     { text: 'Blame faculty', effects: { morale: -10 } },
     { text: 'Ignore results', effects: { reputation: -15, morale: -5 } }
   ]},
@@ -203,8 +203,14 @@ export default function DepartmentChairGame() {
 
     if (year >= 5) {
       setStats(newStats);
-      setGameOver('You successfully completed 5 years term as a chair!');
-      return;
+      if (newStats.budget >= 10000 && newStats.morale >= 100 && newStats.reputation >= 100 && newStats.research >= 100) {
+        setGameOver('You were an excellent chair in last 5 years! Now you got promoted to Dean!');
+        return;
+      }
+      else {
+        setGameOver('You successfully completed 5 years term as a chair!');
+        return;
+      }
     }
 
     setStats(newStats);
