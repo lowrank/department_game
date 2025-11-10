@@ -20,11 +20,6 @@ npm install
 echo "Building project..."
 npm run build
 
-# Backup dist folder
-echo "Backing up build files..."
-rm -rf temp_dist
-cp -r dist temp_dist
-
 # Switch to gh-pages branch
 echo "Switching to gh-pages branch..."
 if git show-ref --verify --quiet refs/heads/gh-pages; then
@@ -37,10 +32,9 @@ fi
 git rm -rf . || true
 git clean -fdx || true
 
-# Copy build files
+# Copy build files directly
 echo "Copying build files..."
-cp -r temp_dist/* .
-rm -rf temp_dist
+cp -r dist/* .
 
 # Add and commit
 echo "Committing changes..."
