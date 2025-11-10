@@ -204,7 +204,7 @@ export default function DepartmentChairGame() {
     if (year >= 5) {
       setStats(newStats);
       if (newStats.budget >= 10000 && newStats.morale >= 100 && newStats.reputation >= 100 && newStats.research >= 100) {
-        setGameOver('You were an excellent chair in last 5 years! Now you got promoted to Dean!');
+        setGameOver('You were an excellent chair in last 5 years! Now you got promoted to the Dean of Graduate Schools!');
         return;
       }
       else {
